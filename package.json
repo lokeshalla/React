@@ -1,0 +1,34 @@
+{
+  "name": "react-project",
+  "version": "1.0.0",
+  "description": "React Project - Learning",
+  "keywords": [
+    "React"
+  ],
+  "homepage": "https://github.com/lokeshalla/React#readme",
+  "bugs": {
+    "url": "https://github.com/lokeshalla/React/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lokeshalla/React.git"
+  },
+  "license": "ISC",
+  "author": "Lokesh Alla",
+  "type": "module",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "parcel": "^2.16.1"
+  },
+  "dependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ]
+}

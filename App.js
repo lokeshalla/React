@@ -1,11 +1,16 @@
-const parent = React.createElement(
-  "div",
-  { id: "parent" },
-  React.createElement("div", { id: "child" }, [
-    React.createElement("h1", {}, "I am an h1 tag"),
-    React.createElement("h2", {}, "I am an h2 tag"),
-  ])
+import React from "react";
+import ReactDOM from "react-dom/client";
+
+// React.createElement() => JS Object => HTML Element(render)
+
+const heading = React.createElement(
+  "h1",
+  { id: "heading" },
+  "Hello from React!"
 );
 
+const theme = React.createElement("button", { id: "btn" }, "");
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(parent);
+
+root.render(heading);
