@@ -1,0 +1,29 @@
+{
+  "name": "namaste-react",
+  "version": "1.0.0",
+  "description": "This is React",
+  "keywords": [
+    "react"
+  ],
+  "homepage": "https://github.com/lokeshalla/React#readme",
+  "bugs": {
+    "url": "https://github.com/lokeshalla/React/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lokeshalla/React.git"
+  },
+  "license": "ISC",
+  "author": "Lokesh",
+  "type": "module",
+  "scripts": {
+    "test": "jest"
+  },
+  "devDependencies": {
+    "parcel": "^2.16.4"
+  },
+  "dependencies": {
+    "react": "^19.2.5",
+    "react-dom": "^19.2.5"
+  }
+}
