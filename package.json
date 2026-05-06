@@ -17,6 +17,8 @@
   "author": "Lokesh",
   "type": "module",
   "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
     "test": "jest"
   },
   "devDependencies": {
@@ -25,5 +27,8 @@
   "dependencies": {
     "react": "^19.2.5",
     "react-dom": "^19.2.5"
-  }
+  },
+  "browserslist": [
+    "last 2 versions"
+  ]
 }
