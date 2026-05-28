@@ -27,32 +27,32 @@
 
 # Header
 
--> Logo
--> Location
+- Logo
+- Location
 
--> Search
--> Offers
--> Help
--> Sign in
--> Cart
+- Search
+- Offers
+- Help
+- Sign in
+- Cart
 
 # Body
 
--> Filter
--> Restaurent Container
--> Restaurent Cards 1. image 2. name 3. rating 4. cuisines 5. Location
+- Filter
+- Restaurent Container
+- Restaurent Cards 1. image 2. name 3. rating 4. cuisines 5. Location
 
 # Footer
 
--> Copyright
--> Links
+- Copyright
+- Links
 
 # Two Types of Import / Export
 
-1. Named Export / Import
-   export const Component;
-   import {Component} from "path";
+- Named Export / Import
+  export const Component;
+  import {Component} from "path";
 
-2. Default Export / Import
-   export default Component;
-   import Component from "path";
+- Default Export / Import
+  export default Component;
+  import Component from "path";
