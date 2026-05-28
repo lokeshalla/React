@@ -22,3 +22,37 @@
 16. Transpilation
 17. Tree shaking – remove unused code
 18. Different dev and production bundles
+
+# Food App
+
+# Header
+
+-> Logo
+-> Location
+
+-> Search
+-> Offers
+-> Help
+-> Sign in
+-> Cart
+
+# Body
+
+-> Filter
+-> Restaurent Container
+-> Restaurent Cards 1. image 2. name 3. rating 4. cuisines 5. Location
+
+# Footer
+
+-> Copyright
+-> Links
+
+# Two Types of Import / Export
+
+1. Named Export / Import
+   export const Component;
+   import {Component} from "path";
+
+2. Default Export / Import
+   export default Component;
+   import Component from "path";
