@@ -65,3 +65,9 @@ li {
   transition: all 0.6s ease;
   background-color: lightgrey;
 }
+.filter-btn {
+  cursor: pointer;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+}

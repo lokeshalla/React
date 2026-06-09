@@ -1,23 +1,28 @@
 import RestaurentCard from "./RestaurentCard";
 import resList from "../utils/mockData";
+import { useState } from "react";
 
 const Body = () => {
+  //Local State Variable - React - Super Powerful Variable
+  const [listOfRestaurents, setListOfRestaurents] = useState(resList);
+
   return (
     <>
       <div className="filter">
-        <select defaultValue="">
-          <option value="" disabled>
-            Sort by
-          </option>
-          <option value="relevance">Relevance</option>
-          <option value="delivery">Delivery Time</option>
-          <option value="rating">Rating</option>
-          <option value="price-low-to-high">Cost: Low to High</option>
-          <option value="price-high-to-low">Cost: High to Low</option>
-        </select>
+        <button
+          className="filter-btn"
+          onClick={() => {
+            const filteredList = listOfRestaurents.filter(
+              (res) => res.info.avgRating > 4,
+            );
+            setListOfRestaurents(filteredList);
+          }}
+        >
+          Top Rated restaurents
+        </button>
       </div>
       <div className="restaurent-container">
-        {resList.map((restaurent) => (
+        {listOfRestaurents.map((restaurent) => (
           <RestaurentCard key={restaurent.info.id} resData={restaurent} />
         ))}
       </div>
