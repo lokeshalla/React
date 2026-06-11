@@ -1,10 +1,10 @@
 import RestaurentCard from "./RestaurentCard";
 import resList from "../utils/mockData";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Body = () => {
   //Local State Variable - React - Super Powerful Variable
-  const [listOfRestaurents, setListOfRestaurents] = useState(resList);
+  const [listOfRestaurants, setListOfRestaurants] = useState(resList);
 
   return (
     <>
@@ -12,17 +12,17 @@ const Body = () => {
         <button
           className="filter-btn"
           onClick={() => {
-            const filteredList = listOfRestaurents.filter(
+            const filteredList = listOfRestaurants.filter(
               (res) => res.info.avgRating > 4,
             );
-            setListOfRestaurents(filteredList);
+            setListOfRestaurants(filteredList);
           }}
         >
-          Top Rated restaurents
+          Top Rated restaurants
         </button>
       </div>
       <div className="restaurent-container">
-        {listOfRestaurents.map((restaurent) => (
+        {listOfRestaurants.map((restaurent) => (
           <RestaurentCard key={restaurent.info.id} resData={restaurent} />
         ))}
       </div>
