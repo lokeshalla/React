@@ -1,9 +1,22 @@
-function Shimmer() {
+const Shimmer = () => {
   return (
-    <div className="spinner-wrapper">
-      <div className="spinner" />
+    <div className="shimmer-container">
+      {Array(12)
+        .fill("")
+        .map((_, index) => (
+          <div className="shimmer-card" key={index}>
+            <div className="shimmer-img"></div>
+            <div className="shimmer-info">
+              <div className="shimmer-line shimmer-title"></div>
+              <div className="shimmer-line"></div>
+              <div className="shimmer-line"></div>
+              <div className="shimmer-line shimmer-cuisine"></div>
+              <div className="shimmer-line"></div>
+            </div>
+          </div>
+        ))}
     </div>
   );
-}
+};
 
 export default Shimmer;
