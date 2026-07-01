@@ -1,7 +1,7 @@
 import RestaurentCard from "./RestaurentCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
-import { API_URL } from "../utils/constants";
+import { API_URL, CORS_PROXY } from "../utils/constants";
 
 const Body = () => {
   //Local State Variable - React - Super Powerful Variable
@@ -17,7 +17,7 @@ const Body = () => {
 
   async function fetchData() {
     try {
-      const response = await fetch(API_URL);
+      const response = await fetch(CORS_PROXY + API_URL);
       if (!response.ok) {
         throw new Error("Failed to fetch data");
       }
