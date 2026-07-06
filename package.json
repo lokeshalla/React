@@ -1,7 +1,10 @@
 {
-  "name": "namaste-react",
+  "@parcel/resolver-default": {
+    "packageExports": true
+  },
+  "name": "Food Delivery App",
   "version": "1.0.0",
-  "description": "This is React",
+  "description": "A simple food delivery app built with React",
   "keywords": [
     "react"
   ],
@@ -25,8 +28,9 @@
     "parcel": "^2.16.4"
   },
   "dependencies": {
-    "react": "^19.2.5",
-    "react-dom": "^19.2.5"
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "react-router": "^8.1.0"
   },
   "browserslist": [
     "last 2 versions"

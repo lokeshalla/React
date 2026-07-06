@@ -61,11 +61,16 @@
 
 (Normal JS Utility Functions)
 
-useState(): Form inputs, Counters, UI State
-useEffect(): API Calls, Event Listeners, Timers
-useContext(): Authentication, Global App Settings
-useRef(): Access DOM Elements, Focus Inputs
-useMemo(): Large List Filtering, Sorting
-useCallback(): Passing callbacks to child components, Optimizing renders with React.memo
-useReducer(): Shopping Carts, Multi Step Forms, Complex State Transitions
-Custom Hooks
+- useState(): Form inputs, Counters, UI State
+- useEffect(): API Calls, Event Listeners, Timers
+- useContext(): Authentication, Global App Settings
+- useRef(): Access DOM Elements, Focus Inputs
+- useMemo(): Large List Filtering, Sorting
+- useCallback(): Passing callbacks to child components, Optimizing renders with React.memo
+- useReducer(): Shopping Carts, Multi Step Forms, Complex State Transitions
+- Custom Hooks
+
+# Routing
+
+- Client Side Routing
+- Server Side Routing
