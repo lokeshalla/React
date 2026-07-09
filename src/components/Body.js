@@ -2,6 +2,7 @@ import RestaurentCard from "./RestaurentCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { API_URL, CORS_PROXY } from "../utils/constants";
+import { Link } from "react-router";
 
 const Body = () => {
   //Local State Variable - React - Super Powerful Variable
@@ -22,7 +23,6 @@ const Body = () => {
         throw new Error("Failed to fetch data");
       }
       const data = await response.json();
-      console.log(data);
       setListOfRestaurants(
         data?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
           ?.restaurants,
@@ -77,7 +77,12 @@ const Body = () => {
       </div>
       <div className="restaurent-container">
         {filteredRestaurants.map((restaurant) => (
-          <RestaurentCard key={restaurant.info.id} resData={restaurant} />
+          <Link
+            key={restaurant.info.id}
+            to={"/restaurant/" + restaurant.info.id}
+          >
+            <RestaurentCard resData={restaurant} />
+          </Link>
         ))}
       </div>
     </>

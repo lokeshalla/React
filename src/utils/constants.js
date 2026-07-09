@@ -7,4 +7,10 @@ export const CDN_URL =
 export const API_URL =
   "https://www.swiggy.com/dapi/restaurants/list/v5?lat=17.495272&lng=78.3856699&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
 
-export const CORS_PROXY = "https://corsproxy.io/?url=";
+export const MENU_API_URL =
+  "https://www.swiggy.com/mapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=17.495272&lng=78.3856699&restaurantId=";
+
+export const CORS_PROXY = "https://corsproxy.io/?";
+
+export const RESTAURANT_IMG_API =
+  "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1600,h_640,c_fill/";
