@@ -1,19 +1,23 @@
-const About = () => {
-  return (
-    <>
-      <div>
-        <h1> About Us</h1>
-      </div>
-      <div>
-        <h1>Head Office Address:</h1>
-        <p>
-          Sumadhura Capitol Towers, 3rd- 6th Floor - Tower 1, Sy. No. 14 & 158,
-          Pattanduru Agrahara, K R Puram Hobli, Bengaluru East Taluk, Bengaluru,
-          Karnataka - 560066.
-        </p>
-      </div>
-    </>
-  );
-};
+import React from "react";
+import UserClass from "./UserClass";
+import User from "./User";
+
+class About extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  componentDidMount() {}
+
+  render() {
+    return (
+      <>
+        <div className="user-profile">
+          <User />
+        </div>
+      </>
+    );
+  }
+}
 
 export default About;

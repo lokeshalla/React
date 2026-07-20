@@ -1,29 +1,31 @@
-import { useState, useEffect } from "react";
-import { MENU_API_URL, CORS_PROXY } from "../utils/constants";
 import { RESTAURANT_IMG_API } from "../utils/constants";
 import { useParams } from "react-router";
-import Shimmer from "./Shimmer";
+import { MenuShimmer } from "./Shimmer";
+import useRestaurantMenu from "../utils/useRestaurantMenu";
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
-  const [restaurantInfo, setRestaurantInfo] = useState(null);
-  useEffect(() => {
-    fetchMenu();
-  }, []);
-  const fetchMenu = async () => {
-    const data = await fetch(CORS_PROXY + MENU_API_URL + resId);
-    const json = await data.json();
-    setRestaurantInfo(json?.data);
-  };
+  const restaurantInfo = useRestaurantMenu(resId);
 
-  if (restaurantInfo === null) return <Shimmer />;
+  if (restaurantInfo === null) {
+    return <MenuShimmer />;
+  }
 
-  const { name, cuisines, costForTwoMessage, cloudinaryImageId } =
-    restaurantInfo?.cards[2]?.card?.card?.info;
+  const {
+    name,
+    cuisines = [],
+    costForTwoMessage,
+    cloudinaryImageId,
+  } = restaurantInfo?.cards?.[2]?.card?.card?.info ?? {};
 
-  const { itemCards } =
-    restaurantInfo?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card
-      ?.card;
+  const regularCards =
+    restaurantInfo?.cards?.find(
+      (card) => card?.groupedCard?.cardGroupMap?.REGULAR?.cards,
+    )?.groupedCard?.cardGroupMap?.REGULAR?.cards ?? [];
+
+  const itemCards =
+    regularCards.find((card) => card?.card?.card?.itemCards)?.card?.card
+      ?.itemCards ?? [];
 
   return (
     <div className="restaurant-menu">
@@ -36,13 +38,17 @@ const RestaurantMenu = () => {
         {cuisines?.join(", ")} - {costForTwoMessage}
       </div>
       <ul>
-        {itemCards.map((item) => (
-          <li key={item?.card?.info?.id}>
-            {item?.card?.info?.name} - {"₹ "}
-            {item?.card?.info?.defaultPrice / 100 ||
-              item?.card?.info?.price / 100}
-          </li>
-        ))}
+        {itemCards.length === 0 ? (
+          <li>No items available</li>
+        ) : (
+          itemCards.map((item, index) => (
+            <li key={`${item?.card?.info?.id}-${index}`}>
+              {item?.card?.info?.name} - {"₹ "}
+              {item?.card?.info?.defaultPrice / 100 ||
+                item?.card?.info?.price / 100}
+            </li>
+          ))
+        )}
       </ul>
     </div>
   );

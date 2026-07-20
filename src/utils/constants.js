@@ -10,7 +10,7 @@ export const API_URL =
 export const MENU_API_URL =
   "https://www.swiggy.com/mapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=17.495272&lng=78.3856699&restaurantId=";
 
-export const CORS_PROXY = "https://corsproxy.io/?";
+export const CORS_PROXY = "https://proxy.corsfix.com/?";
 
 export const RESTAURANT_IMG_API =
   "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1600,h_640,c_fill/";

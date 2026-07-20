@@ -161,3 +161,56 @@ a {
   height: 300px;
   border-radius: 30px;
 }
+.user-profile {
+  background-color: aliceblue;
+  display: flex;
+  border: 1px solid rgb(210, 210, 210);
+  justify-content: space-between;
+  margin: 30px;
+  border-radius: 30px;
+  width: 250px;
+}
+.git_avatar {
+  height: 200px;
+  width: 200px;
+  border-radius: 30px;
+  margin: 25px;
+}
+.menu-shimmer-page {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 18px 55px 40px;
+  text-align: center;
+}
+
+.menu-shimmer-heading {
+  width: 250px;
+  height: 35px;
+  margin: 0 auto 30px;
+}
+
+.menu-shimmer-image {
+  width: 90%;
+  height: 300px;
+  margin: 0 auto;
+  border-radius: 30px;
+}
+
+.menu-shimmer-subtitle {
+  width: 250px;
+  height: 20px;
+  margin: 15px auto 30px;
+}
+
+.menu-shimmer-line {
+  width: 55%;
+  height: 18px;
+  margin: 12px auto;
+}
+
+.menu-shimmer-block {
+  border-radius: 6px;
+  background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+  background-size: 200% 100%;
+  animation: shimmer 3s infinite;
+}

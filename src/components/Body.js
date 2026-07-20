@@ -1,40 +1,31 @@
 import RestaurentCard from "./RestaurentCard";
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import Shimmer from "./Shimmer";
-import { API_URL, CORS_PROXY } from "../utils/constants";
 import { Link } from "react-router";
+import useRestaurantData from "../utils/useRestaurantData";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 const Body = () => {
   //Local State Variable - React - Super Powerful Variable
-  const [listOfRestaurants, setListOfRestaurants] = useState([]);
+
+  const listOfRestaurants = useRestaurantData();
 
   const [filteredRestaurants, setFilteredRestaurants] = useState([]);
 
   const [searchText, setSearchText] = useState("");
 
   useEffect(() => {
-    fetchData();
-  }, []);
+    setFilteredRestaurants(listOfRestaurants);
+  }, [listOfRestaurants]);
 
-  async function fetchData() {
-    try {
-      const response = await fetch(CORS_PROXY + API_URL);
-      if (!response.ok) {
-        throw new Error("Failed to fetch data");
-      }
-      const data = await response.json();
-      setListOfRestaurants(
-        data?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
-          ?.restaurants,
-      );
-      setFilteredRestaurants(
-        data?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle
-          ?.restaurants,
-      );
-    } catch (err) {
-      console.error(err);
-    }
+  const onlineStatus = useOnlineStatus();
+
+  if (onlineStatus === false) {
+    return (
+      <h1>Looks like you are Offline. Please check your internet connection</h1>
+    );
   }
+
   return listOfRestaurants.length === 0 ? (
     <Shimmer />
   ) : (

@@ -19,4 +19,18 @@ const Shimmer = () => {
   );
 };
 
+export const MenuShimmer = () => {
+  return (
+    <div className="menu-shimmer-page">
+      <div className="menu-shimmer-block menu-shimmer-heading"></div>
+      <div className="menu-shimmer-block menu-shimmer-image"></div>
+      <div className="menu-shimmer-block menu-shimmer-subtitle"></div>
+
+      {Array.from({ length: 15 }).map((_, index) => (
+        <div key={index} className="menu-shimmer-block menu-shimmer-line"></div>
+      ))}
+    </div>
+  );
+};
+
 export default Shimmer;
