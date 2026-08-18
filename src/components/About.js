@@ -1,6 +1,6 @@
 import React from "react";
-import UserClass from "./UserClass";
 import User from "./User";
+import UserClass from "./UserClass";
 
 class About extends React.Component {
   constructor(props) {
@@ -12,8 +12,9 @@ class About extends React.Component {
   render() {
     return (
       <>
-        <div className="user-profile">
+        <div className="flex justify-between bg-amber-100 m-20 border border-gray-300 rounded-2xl w-160 p-5">
           <User />
+          <UserClass />
         </div>
       </>
     );

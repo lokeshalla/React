@@ -16,7 +16,7 @@ const User = ({ name, location, contact }) => {
 
   console.log("render");
   return (
-    <div className="user-card">
+    <div>
       <h2>Functional Component</h2>
       <h2>Name: {name}</h2>
       <h3>Location: {location}</h3>

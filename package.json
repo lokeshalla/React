@@ -28,9 +28,11 @@
     "parcel": "^2.16.4"
   },
   "dependencies": {
+    "@tailwindcss/postcss": "^4.3.3",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
-    "react-router": "^8.1.0"
+    "react-router": "^8.1.0",
+    "tailwindcss": "^4.3.3"
   },
   "browserslist": [
     "last 2 versions"

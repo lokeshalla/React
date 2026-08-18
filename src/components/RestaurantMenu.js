@@ -28,13 +28,13 @@ const RestaurantMenu = () => {
       ?.itemCards ?? [];
 
   return (
-    <div className="restaurant-menu">
-      <h1>{name}</h1>
+    <div className="w-200 mx-auto my-8 text-center rounded-3xl p-4">
+      <h1 className="font-bold text-xl">{name}</h1>
       <img
-        className="menu-hero-img"
+        className="w-[90%] h-90 mx-auto rounded-3xl object-cover m-5"
         src={RESTAURANT_IMG_API + cloudinaryImageId}
       />
-      <div>
+      <div className="mb-5 font-medium">
         {cuisines?.join(", ")} - {costForTwoMessage}
       </div>
       <ul>
